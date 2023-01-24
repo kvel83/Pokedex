@@ -2,7 +2,7 @@
 
 <h2>Descripción</h2>
 
-<p>Proyecto realizado para la consulta de todos los pokemones existentes hasta el momento y la descripción de sus principales características. Se puede acceder a esta información por un buscador que tiene la función de autocompletado o haciendo click en algún pokemón de la lista. También provee un listado de la cantidad de pokemones por letra al final de la página. Su versión Mobile y estilización se encuentra en proceso.</p>
+<p>Proyecto realizado para la consulta de todos los pokemones existentes hasta el momento y la descripción de sus principales características. Se puede acceder a esta información por un buscador que tiene la función de autocompletado o haciendo click en algún pokemón de la lista. También provee un listado de la cantidad de pokemones por letra al final de la página. Su versión Mobile, estilización se encuentra en proceso y despliegue en producción se encuentran en proceso.</p>
 <h2>Estado del proyecto</h2>
 <h4 align="center"> :construction: Proyecto en construcción :construction: </h4>
 <h2>Funcionalidades</h2>
