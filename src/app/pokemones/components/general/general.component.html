@@ -1,0 +1,11 @@
+<table class="table table-striped  ">
+  <thead>
+    <tr><th>Cantidad de Pokemones por letra</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let letter of abc">
+      <td >{{letter.letter}}</td>
+      <td >{{getPokemonNumberOf(letter.letter)}}</td>
+    </tr>
+  </tbody>
+</table>

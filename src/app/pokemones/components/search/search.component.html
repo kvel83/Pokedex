@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+      <form (ngSubmit) = "sendPokemon(pokemon)">
+        <input
+          type="text"
+          name="pokemonSearch"
+          class="form-control"
+          [(ngModel)] = "pokemon"
+          (ngModelChange)="filter(pokemon)"
+          placeholder="Ingresa el pokemón que deseas buscar"
+          id="pokemon"/>
+          <ul *ngIf = "pokemonFilter.length > 0">
+            <li *ngFor = "let pokemon of pokemonFilter" (click) = "sendPokemon(pokemon.name)">
+              <span>{{pokemon.name}}</span>
+            </li>
+          </ul>
+        </form>
+  </div>
+</div>
+

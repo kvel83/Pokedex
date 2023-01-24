@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;" *ngIf = "selectedPokemon">
+  <img src={{selectedPokemon.sprites.front_default}} class="card-img-top" alt={{selectedPokemon.name}}>
+  <div class="card-body">
+    <h5 class="card-title">{{selectedPokemon.name}}</h5>
+    <dl class="card-text">
+      <dt>Número</dt>
+      <dd>{{selectedPokemon.id}}</dd>
+      <dt>Tipo</dt>
+      <dd>{{types}}</dd>
+      <dt>Altura</dt>
+      <dd>{{selectedPokemon.height*10}} centímetros</dd>
+      <dt>Peso</dt>
+      <dd>{{selectedPokemon.weight * 0.1}} kg</dd>
+      <dt>Habilidades</dt>
+      <dd>{{abilities}}</dd>
+    </dl>
+  </div>
+</div>

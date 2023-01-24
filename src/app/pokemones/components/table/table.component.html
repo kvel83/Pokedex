@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col">
+      <form (ngSubmit) = "sendPokemon(pokemon)">
+        <input
+          type="text"
+          name="pokemon"
+          class="form-control"
+          [(ngModel)] = "pokemon"
+          (ngModelChange)="filter()"
+          placeholder="Ingresa el pokemón que deseas buscar"
+          id="pokemon"/>
+          <ul *ngIf = "pokemonFilter.length > 0">
+            <li *ngFor = "let pokemon of pokemonFilter" (click) = "sendPokemon(pokemon.name)">
+              <span>{{pokemon.name}}</span>
+            </li>
+          </ul>
+        </form>
+  </div>
+</div>
+<hr/>
+<div *ngIf = "errorExist" class="alert alert-danger">
+  <h6>No se encontró ningún Pokemón con el nombre {{pokemon}}</h6>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="text-primary fw-bold bg-primary bg-opacity-25 border border-primary border-2 border-opacity-50">Nombre</th>
+          <th class="text-primary fw-bold bg-primary bg-opacity-25 border border-primary border-2 border-opacity-50">URL</th>
+        </tr>
+      </thead>
+      <tbody class="border border-primary bg-primary bg-opacity-25 border text-primary border-2 border-opacity-50">
+          <tr class="" *ngFor = "let pokemon of pokemonFilteredTable | slice:from:to ">
+            <td (click) = "sendPokemon(pokemon.name)">{{pokemon.name}}</td>
+            <td (click) = "sendPokemon(pokemon.name)">{{pokemon.url}}</td>
+          </tr>
+      </tbody>
+    </table>
+    <div class="paginator">
+      <mat-paginator [length]="listPokemonResult.count"
+                [pageSize]="pageSize"
+                (page) = "changePage($event) "
+                aria-label="Select page">
+      </mat-paginator>
+    </div>
+  </div>
+</div>
