@@ -25,11 +25,9 @@ export class TableComponent implements OnInit{
   from: number = 0;
   pageSize: number = 20;
   to: number = 20;
-  // @Output()
-  // pokemonSelected: EventEmitter<string> = new EventEmitter<string>();
   @Output() pokemonSelected = new EventEmitter<string>;
   pokemonFilter: Result[] = [];
-  // pokemonFilter: Observable<string[]>;
+
 
 
   constructor(private pokemonService:PokemonsService, private pokemonSelectedService: PokemonSelectedService, private eventEmitterService: EventEmitterService) {
@@ -62,7 +60,6 @@ export class TableComponent implements OnInit{
           next: response => {
             this.listPokemonResult =  response;
             this.pokemonFilteredTable = this.listPokemonResult.results;
-            console.log(this.pokemonFilteredTable);
             this.pokemonFilteredTable = this.pokemonFilteredTable.sort((firstPokemon: Result, secondPokemon: Result) => (firstPokemon.name > secondPokemon.name)? 1 : -1);
           },
           error: error => {
@@ -86,11 +83,9 @@ export class TableComponent implements OnInit{
    sendPokemon(pokemon: string){
      this.pokemonFilter = [];
      this.pokemon = pokemon;
-     console.log(pokemon);
      this.pokemonSelectedService.setPokemon(pokemon);
      this.pokemon = this.pokemonSelectedService.getPokemon();
-    //  this.pokemonSelected.emit(pokemon);
-    this.eventEmitterService.onSearchPokemonClick();
+     this.eventEmitterService.onSearchPokemonClick();
 
 
    }
